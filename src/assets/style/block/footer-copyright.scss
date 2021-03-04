@@ -1,0 +1,31 @@
+.footer-copyright {
+  margin-top: 24px;
+  border-top: 1px solid #c9cacc;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__copyright {
+    @include h5-normal;
+    color: $c_black;
+  }
+
+  &__dev-link {
+    display: block;
+  }
+}
+
+@media (max-width: $a_md) {
+  .footer-copyright {
+    margin-top: 18px;
+    border-top: none;
+    height: auto;
+    display: block;
+    padding-bottom: 20px;
+
+    &__dev-link {
+      margin-top: 15px;
+    }
+  }
+}

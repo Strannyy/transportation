@@ -1,0 +1,193 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &__wrapper {
+    position: relative;
+    background: transparent;
+    padding: 25px 0;
+    z-index: 20;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__row {
+    @include make-row($gutter)
+  }
+
+  &__logo-col {
+    @include make-col-ready();
+    @include make-col(8, 24);
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__logo-col img {
+    max-height: 60px;
+  }
+
+  &__name-company {
+    @include h-oversize-bold;
+    color: $c_blue_main;
+  }
+
+  &__menu-col {
+    @include make-col-ready();
+    @include make-col(16, 24);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__menu-list {
+    display: flex;
+  }
+
+  &__menu-item {
+    @include h3-normal;
+    position: relative;
+    line-height: 26px ;
+    padding: 0 20px;
+    color: $c_gray_dark;
+  }
+
+  &__menu-item:hover &__sub-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__menu-link {
+    text-decoration: none !important;
+  }
+
+  &__sub-menu {
+    @include shadow;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 50px;
+    left: 15px;
+    width: 250px;
+    background-color: #ffffff;
+  }
+
+  &__sub-menu_item {
+    position: relative;
+  }
+
+  &__sub-menu_item:after {
+    content:"";
+    background: linear-gradient(
+                    to right,
+                    rgba($c_blue_main, 0.2) 0%,
+                    rgba($c_blue_main, 1) 50%,
+                    rgba($c_blue_main, 0.2) 100%
+    );
+    display: block;
+    height:2px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__sub-menu_item:hover {
+    background-color: $c_blue_main;
+  }
+
+  &__sub-menu-link {
+    display: block;
+    padding: 15px 20px;
+    color: $c_blue_main;
+  }
+
+  &__sub-menu-link:hover {
+    color: #ffffff;
+  }
+}
+
+@media (max-width: $a_xl) {
+  .header {
+    &__col-tabs {
+      @include make-col(12, 24);
+    }
+
+    &__col-link {
+      @include make-col(12, 24);
+    }
+
+    &__col-logo {
+      @include make-col(6, 24);
+    }
+
+    &__col-catalog-btn {
+      display: none;
+    }
+
+    &__col-search {
+      @include make-col(18, 24);
+    }
+
+    &__col-catalog-links {
+      display: none;
+    }
+
+    &_full-search &__col-search {
+      @include make-col(1, 1);
+    }
+  }
+}
+
+@media (max-width: $a_lg) {
+  .header {
+    &__col-tabs {
+      @include make-col(15, 24);
+    }
+
+    &__col-link {
+      @include make-col(9, 24);
+    }
+
+    &__col-logo {
+      @include make-col(6, 24);
+    }
+
+    &__col-search {
+      @include make-col(18, 24);
+    }
+  }
+}
+
+@media (max-width: $a_md) {
+  .header {
+    $height-top: 40px;
+
+    &__col-tabs {
+      @include make-col(1, 1);
+    }
+
+    &__col-link {
+      display: none;
+    }
+
+    &__tabs {
+      height: $height-top;
+    }
+
+    &__col-logo {
+      @include make-col(1, 1);
+      height: 67px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__col-search {
+      @include make-col(1, 1);
+    }
+  }
+}

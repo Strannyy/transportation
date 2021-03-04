@@ -1,0 +1,63 @@
+@mixin h-oversize-bold {
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 600;
+}
+
+@mixin h1-bold {
+  font-size: 38px;
+  line-height: 46px;
+  font-weight: 600;
+
+  @media (max-width: $a_md) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@mixin h3-normal {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+
+  @media (max-width: $a_md) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+@mixin h4-normal {
+  font-size: 14px;
+    line-height: 16px;
+  font-weight: 400;
+
+  @media (max-width: $a_md) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+@mixin h5-normal {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+
+  @media (max-width: $a_md) {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+@mixin container {
+  max-width: $container_width;
+  margin: 0 auto;
+
+  @media (max-width: $container_width + $container_margin * 2) {
+    margin-left: #{$container_margin};
+    margin-right: #{$container_margin};
+  }
+}
+
+@mixin shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25)
+}
