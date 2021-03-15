@@ -7,7 +7,6 @@
 @import "general";
 
 //blocks
-@import "block/footer-copyright";
 @import "block/main-slider";
 @import "block/additional-services";
 @import "block/calculate";
@@ -15,8 +14,13 @@
 @import "block/reviews";
 @import "block/services";
 @import "block/working";
+@import "block/slider";
 
 //elements
+@import "element/card-service";
+@import "element/card-count-about";
+@import "element/working-client";
+@import "element/card-reviews";
 
 //general
 @import "general/footer";

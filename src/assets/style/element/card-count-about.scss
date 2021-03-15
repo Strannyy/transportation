@@ -1,0 +1,39 @@
+.card-count-about {
+  position: relative;
+  border-radius: 20px;
+  top: 0;
+  height: 180px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    box-shadow: 0 15px 30px rgba($c_blue_main, 0.25);
+    top: -10px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  &__icon {
+    height: 55px;
+    max-width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__count-number {
+    @include h2-bold;
+    margin-top: 15px;
+  }
+
+  &__title {
+    @include h4-normal;
+    margin-top: 15px;
+  }
+}

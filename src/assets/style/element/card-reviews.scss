@@ -1,0 +1,64 @@
+.card-reviews {
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 10px;
+  height: 280px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+
+  &_disable {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 10px;
+    height: 280px;
+    opacity: 0.3;
+    box-shadow: none;
+    border: 1px solid $c_gray;
+    transform: scale(0.8);
+  }
+
+  &_disable &__client-avatar img {
+    filter: grayscale(100%);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    transform: translateY(-65px);
+    height: calc(100% + 65px);
+  }
+
+  &__client-avatar {
+    max-width: 100px;
+    margin-bottom: 25px;
+  }
+
+  &__client-avatar img {
+    border-radius: 50%;
+    max-width: 100%;
+  }
+
+  &__client-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+
+  &__client-name {
+    @include h2-bold;
+    margin-bottom: 10px;
+  }
+
+  &__client-company {
+    @include h4-normal;
+  }
+
+  &__client-review-text {
+    @include h4-normal;
+    font-weight: 300;
+    line-height: 24px;
+  }
+}
+

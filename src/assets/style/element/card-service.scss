@@ -1,0 +1,47 @@
+.card-service {
+  position: relative;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid $c_gray;
+  top: 0;
+  height: 300px;
+
+  &:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    top: -10px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__icon {
+    height: 40px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include h2-bold;
+    margin-top: 15px;
+  }
+
+  &__text {
+    @include h4-normal;
+    margin-top: 15px;
+  }
+
+  &__more-link {
+    @include h4-normal;
+    margin-top: 15px;
+    color: $c_blue_main;
+  }
+
+  &__more-link:hover {
+    color: $c_blue_main;
+  }
+}

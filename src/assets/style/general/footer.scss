@@ -27,115 +27,149 @@
 
   &__contact-col {
     @include make-col-ready($gutter);
-    @include make-col(13, 24);
+    @include make-col-offset(2, 24);
+    @include make-col(6, 24);
+  }
+
+  &__contact-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  &__contact-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__contact-address, &__contact-tel, &__contact-email {
+    @include h4-normal;
+    color: $c_black;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__contact-address:hover, &__contact-tel:hover, &__contact-email:hover {
+    color: $c_blue_main;
+  }
+
+  &__contact-address:hover svg, &__contact-tel:hover svg, &__contact-email:hover svg {
+    fill: $c_blue_main;
+  }
+
+  &__contact-icon {
+    margin-right: 10px;
+  }
+
+  &__contact-list svg {
+    height: 20px;
+    width: 20px;
   }
 
   &__social-col {
     @include make-col-ready($gutter);
-    @include make-col(6, 24);
+    @include make-col-offset(1, 24);
+    @include make-col(5, 24);
   }
 
-  &__info-col {
-    @include make-col-ready($gutter);
-    @include make-col(11, 24);
-    margin-top: 20px;
+  &__social-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  &__social-list {
+    display: flex;
+  }
+
+  &__social-icon {
+    margin-right: 5px;
+  }
+
+  &__social-icon svg {
+    width: 40px;
+    height: 40px;
   }
 
   &__help-col {
     @include make-col-ready($gutter);
     @include make-col-offset(1, 24);
     @include make-col(4, 24);
-    margin-top: 20px;
   }
 
-  &__about-col {
-    @include make-col-ready($gutter);
-    @include make-col(4, 24);
-    margin-top: 20px;
+  &__help-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  &__help-list-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__help-link {
+    @include h4-normal;
+    color: $c_black;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__help-link:hover {
+    color: $c_blue_main;
+  }
+
+  &__help-link::before {
+    position: relative;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border: 2px solid$c_blue_main;
+    border-radius: 50%;
+    margin-right: 15px;
   }
 
   &__copyright-col {
     @include make-col-ready($gutter);
     @include make-col(24, 24);
-  }
-}
 
-@media (max-width: $a_lg) {
-  .footer {
-    padding-bottom: 50px;
+    .footer-copyright {
+      margin-top: 24px;
+      border-top: 1px solid #c9cacc;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-    &__logo-col {
-      @include make-col(7, 24);
-    }
+      &__copyright {
+        @include h5-normal;
+        color: $c_black;
+      }
 
-    &__contact-col {
-      @include make-col(12, 24);
-    }
-
-    &__social-col {
-      @include make-col(5, 24);
-    }
-
-    &__info-col {
-      @include make-col(24, 24);
-    }
-
-    &__help-col {
-      @include make-col-offset(0, 24);
-      @include make-col(8, 24);
-    }
-
-    &__about-col {
-      @include make-col(8, 24);
-    }
-
-    &__copyright-col {
-      @include make-col(24, 24);
+      &__dev-link {
+        display: block;
+      }
     }
   }
 }
 
 @media (max-width: $a_md) {
   .footer {
-    padding-top: 25px;
-    &__help-col {
-      @include make-col(1, 2);
-      margin-top: 0;
-      order: 1;
+    .footer-copyright {
+      margin-top: 18px;
+      border-top: none;
+      height: auto;
+      display: block;
+      padding-bottom: 20px;
+
     }
 
-    &__about-col {
-      @include make-col(1, 2);
-      margin-top: 0;
-      order: 2;
-    }
-
-    &__contact-col {
-      margin-top: 20px;
-      @include make-col(3, 5);
-      order: 3;
-    }
-
-    &__social-col {
-      margin-top: 20px;
-      @include make-col(2, 5);
-      order: 4;
-    }
-
-    &__logo-col {
-      margin-top: 25px;
-      @include make-col(1, 1);
-      order: 6;
-    }
-
-    &__info-col {
-      @include make-col(1, 1);
-      order: 7;
-    }
-
-    &__copyright-col {
-      @include make-col(1, 1);
-      order: 9;
+    &__dev-link {
+      margin-top: 15px;
     }
   }
 }

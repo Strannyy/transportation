@@ -1,10 +1,16 @@
 .working {
-  font-size: 100px;
-  font-weight: 600;
-  height: 350px;
-  display: flex;
-  color: $c_gray_dark;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid $c_gray_dark;
+  &__container {
+    @include container;
+    padding-top: 30px;
+  }
+
+  &__row {
+    @include make-row($gutter);
+  }
+
+  &__col {
+    @include make-col-ready($gutter*2);
+    @include make-col(6, 24);
+    margin-bottom: 30px;
+  }
 }

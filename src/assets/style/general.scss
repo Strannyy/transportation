@@ -4,7 +4,7 @@ body {
   font-size: 14px;
   line-height: 1.2;
   color: $c_black;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .app {
@@ -62,17 +62,19 @@ body {
 }
 
 a {
-  color: $c_gray_dark;
   text-decoration: none !important;
   outline: 0 !important;
 }
 
 a:hover {
-  color: $c_gray_dark;
   text-decoration: none !important;
   outline: 0 !important;
 }
 
 * {
   transition: all 0.5s ease;
+}
+
+* svg {
+  transition: all 0.1s ease;
 }

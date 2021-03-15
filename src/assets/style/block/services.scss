@@ -1,10 +1,56 @@
 .services {
-  font-size: 100px;
-  font-weight: 600;
-  height: 350px;
-  display: flex;
-  color: $c_gray_dark;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid $c_gray_dark;
+  &__container {
+    @include container;
+    padding: 30px 0 60px;
+    position: relative;
+  }
+
+  &__col {
+    @include make-col-ready($gutter);
+    @include make-col(4,20);
+    margin-bottom: 15px;
+  }
+
+  .slider_services {
+    margin-top: 30px;
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    margin-right: 7.5px;
+  }
+
+  &__nav-button {
+    border: 2px solid $c_gray;
+    padding: 10px;
+    border-radius: 9px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__nav-button svg {
+    width: 20px;
+    height: 20px;
+    fill: $c_gray;
+  }
+
+  &__nav-button:last-child svg {
+    transform: rotate(180deg);
+  }
+
+  &__nav-button:hover svg {
+    fill: $c_blue_main;
+  }
+
+  &__nav-button:hover {
+    border: 2px solid $c_blue_main;
+    box-shadow: 0 0 30px rgba($c_blue_main, 0.25);
+  }
 }

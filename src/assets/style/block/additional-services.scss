@@ -1,10 +1,50 @@
 .additional-services {
-  font-size: 100px;
-  font-weight: 600;
-  height: 350px;
-  display: flex;
-  color: $c_gray_dark;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid $c_gray_dark;
+  padding: 30px 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__row {
+    @include make-row($gutter);
+  }
+
+  &__about-col {
+    @include make-col-ready($gutter);
+    @include make-col(14, 24);
+  }
+
+  &__about-content {
+    padding: 0 30px;
+  }
+
+  &__about-title {
+    @include h1-bold;
+  }
+
+  &__about-text {
+    @include h3-normal;
+    line-height: 26px;
+    margin-top: 20px;
+  }
+
+  &__count-about-col {
+    @include make-col-ready($gutter);
+    @include make-col(8, 24);
+    @include make-col-offset(2, 24);
+  }
+
+  &__count-about-content {
+    padding: 0 15px;
+  }
+
+  &__count-about-cards-row {
+    @include make-row($gutter)
+  }
+
+  &__count-about-cards-col {
+    @include make-col-ready($gutter*2);
+    @include make-col(12, 24);
+    margin-bottom: 30px;
+  }
 }

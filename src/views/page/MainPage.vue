@@ -1,25 +1,27 @@
 <template>
   <div class="page-index">
-    <div class="page-index__main-slider">
-      <MainSlider />
-    </div>
-    <div class="page-index__services">
-      <Services />
-    </div>
-    <div class="page-index__calculate">
-      <Calculate />
-    </div>
-    <div class="page-index__additional-services">
-      <AdditionalServices />
-    </div>
-    <div class="page-index__working">
-      <Working />
-    </div>
-    <div class="page-index__form-callback">
-      <FormCallback />
-    </div>
-    <div class="page-index__reviews">
-      <Reviews />
+    <div class="page-index__content">
+      <div class="page-index__main-slider">
+        <MainSlider/>
+      </div>
+      <div class="page-index__services">
+        <Services/>
+      </div>
+      <div class="page-index__calculate">
+        <Calculate/>
+      </div>
+      <div class="page-index__additional-services">
+        <AdditionalServices/>
+      </div>
+      <div class="page-index__working">
+        <Working/>
+      </div>
+      <div class="page-index__form-callback">
+        <FormCallback/>
+      </div>
+      <div class="page-index__reviews">
+        <Reviews/>
+      </div>
     </div>
   </div>
 </template>

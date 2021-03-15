@@ -1,10 +1,120 @@
 .form-callback {
-  font-size: 100px;
-  font-weight: 600;
-  height: 350px;
-  display: flex;
-  color: $c_gray_dark;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid $c_gray_dark;
+  padding: 20px 0;
+  &__container {
+    @include container;
+  }
+
+  &__row {
+    @include make-row($gutter);
+  }
+
+  &__title {
+    @include make-col-ready($gutter);
+    @include make-col(1, 1);
+    @include h2-bold;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  &__form {
+    @include make-col-ready($gutter);
+    @include make-col(1, 3);
+    @include make-col-offset(1, 3);
+  }
+
+  %input-field {
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+  }
+
+  input {
+    @extend %input-field;
+    padding: 10px 0;
+  }
+
+  textarea {
+    @extend %input-field;
+    height: 80px;
+    padding: 10px 0;
+    resize: none;
+  }
+
+  &__button {
+    border-bottom:none;
+    cursor: pointer;
+    background-color: $c_blue_main;
+    color: #ffffff;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    border-radius: 10px;
+  }
+
+  &__button:hover {
+    background-color: $c_blue_active;
+  }
+
+  &__contact-us div {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  &__contact-us div label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: $c_gray;
+    pointer-events: none;
+    @include h4-bold;
+  }
+
+  input:focus ~ label,
+  textarea:focus ~ label,
+  input:valid ~ label,
+  textarea:valid ~ label
+  {
+    top: -12px;
+    left: 0;
+    color: $c_blue_main;
+    @include h5-bold;
+  }
+
+  //input:invalid ~ label,
+  //textarea:invalid ~ label {
+  //  color: $c_error;
+  //}
+
+  &__contact-us div span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    background-color: $c_gray;
+    width: 100%;
+    height: 2px;
+  }
+
+  &__contact-us div span:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $c_blue_main;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  input:focus ~ span:before,
+  textarea:focus ~ span:before,
+  input:valid ~ span:before,
+  textarea:valid ~ span:before {
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+  }
 }
